@@ -50,6 +50,12 @@ export function sourceTypeToRoute(t: SourceRefSourceKind): V2Routes {
     case SourceRefSourceKind.GitRepository:
       return V2Routes.GitRepo;
 
+    case SourceRefSourceKind.Bucket:
+      return V2Routes.Bucket;
+
+    case SourceRefSourceKind.HelmRepository:
+      return V2Routes.HelmRepo;
+
     default:
       break;
   }

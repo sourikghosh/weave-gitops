@@ -20,8 +20,10 @@ import theme, { GlobalStyle, muiTheme } from "./lib/theme";
 import { V2Routes } from "./lib/types";
 import Error from "./pages/Error";
 import Automations from "./pages/v2/Automations";
+import BucketDetail from "./pages/v2/BucketDetail";
 import FluxRuntime from "./pages/v2/FluxRuntime";
 import GitRepositoryDetail from "./pages/v2/GitRepositoryDetail";
+import HelmRepositoryDetail from "./pages/v2/HelmRepositoryDetail";
 import KustomizationDetail from "./pages/v2/KustomizationDetail";
 import Sources from "./pages/v2/Sources";
 
@@ -67,6 +69,16 @@ export default function App() {
                       exact
                       path={V2Routes.GitRepo}
                       component={withName(GitRepositoryDetail)}
+                    />
+                    <Route
+                      exact
+                      path={V2Routes.Bucket}
+                      component={withName(BucketDetail)}
+                    />
+                    <Route
+                      exact
+                      path={V2Routes.HelmRepo}
+                      component={withName(HelmRepositoryDetail)}
                     />
                     <Redirect exact from="/" to={V2Routes.Automations} />
                     <Route exact path="*" component={Error} />
